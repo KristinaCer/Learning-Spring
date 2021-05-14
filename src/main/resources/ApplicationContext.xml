@@ -15,6 +15,9 @@
     <bean id="footballCoach" class="com.kristina.spring.models.FootballCoach">
         <!--    Set up setter injection   -->
         <property name="motivationService" ref="motivationService"/>
+<!--        inject literal values-->
+        <property name="emailAddress" value="coach@gmail.com"/>
+        <property name="teamName" value="Peppers Peppers"/>
     </bean>
     <bean id="motivationService" class="com.kristina.spring.services.SportsMotivationService">
     </bean>
