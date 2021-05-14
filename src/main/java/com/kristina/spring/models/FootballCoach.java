@@ -4,9 +4,6 @@ import com.kristina.spring.services.SportsMotivationService;
 
 public class FootballCoach implements Coach{
     private SportsMotivationService motivationService;
-
-
-
     private String emailAddress;
     private String teamName;
 

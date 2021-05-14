@@ -7,6 +7,7 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
+<context:property-placeholder location="application.properties"/>
 
     <bean id="gymCoach" class="com.kristina.spring.models.GymCoach">
         <!--    Set up constructor injection-->
@@ -16,8 +17,8 @@
         <!--    Set up setter injection   -->
         <property name="motivationService" ref="motivationService"/>
 <!--        inject literal values-->
-        <property name="emailAddress" value="coach@gmail.com"/>
-        <property name="teamName" value="Peppers Peppers"/>
+        <property name="emailAddress" value="${couch.email}"/>
+        <property name="teamName" value="${couch.team}"/>
     </bean>
     <bean id="motivationService" class="com.kristina.spring.services.SportsMotivationService">
     </bean>
