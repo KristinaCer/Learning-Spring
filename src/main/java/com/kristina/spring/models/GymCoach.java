@@ -1,22 +1,18 @@
 package com.kristina.spring.models;
 
-import com.kristina.spring.services.GymCoachService;
+import com.kristina.spring.services.SportsMotivationService;
 
 public class GymCoach implements Coach{
-    private GymCoachService coachService;
+    private SportsMotivationService motivationService;
 
     //Spring container will automatically create gym coach object after it was mapped in the application context file.
-    public GymCoach(GymCoachService gymCoachService){
-        this.coachService = gymCoachService;
+    public GymCoach(SportsMotivationService sportsMotivationService){
+        this.motivationService = sportsMotivationService;
         System.out.println("Gym coach created.");
-    }
-
-    public void train(){
-        System.out.println("Gym coach started training.");
     }
 
     @Override
     public void adviceClient() {
-        this.coachService.createTrainingPlan();
+        this.motivationService.createTrainingPlan();
     }
 }

@@ -1,6 +1,6 @@
 package com.kristina.spring.services;
 
-public interface GymService {
+public interface CoachService {
     public void createTrainingPlan();
 }
 
