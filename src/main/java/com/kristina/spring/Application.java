@@ -15,6 +15,10 @@ public class Application {
 		FootballCoach footballCoach = (FootballCoach) context.getBean("footballCoach", Coach.class);
 		//Call methods on the object
 		myGymCoach.adviceClient();
+		//Prove that default bean configuration is SINGLETON:
+		GymCoach myOtherGymCoach = (GymCoach) context.getBean("gymCoach", Coach.class);
+		System.out.println("Memory location for myGymCoach: "  + myGymCoach);
+		System.out.println("Memory location for myOtherGymCoach: "  + myOtherGymCoach);
 		// Close the context
 		context.close();
 	}
