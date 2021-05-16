@@ -1,6 +1,8 @@
 package com.kristina.spring.models;
 
 import com.kristina.spring.services.SportsMotivationService;
+import org.springframework.stereotype.Component;
+
 
 public class GymCoach implements Coach{
     private SportsMotivationService motivationService;

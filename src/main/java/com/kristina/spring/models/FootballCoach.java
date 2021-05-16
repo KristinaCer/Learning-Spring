@@ -1,7 +1,8 @@
 package com.kristina.spring.models;
 
 import com.kristina.spring.services.SportsMotivationService;
-
+import org.springframework.stereotype.Component;
+@Component
 public class FootballCoach implements Coach{
     private SportsMotivationService motivationService;
     private String emailAddress;
