@@ -7,10 +7,39 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--    Set up constructor injection-->
+
     <bean id="coach" class="com.kristina.spring.models.GymCoach">
-        <!--    Set up constructor injection-->
         <constructor-arg ref="gymService"/>
     </bean>
     <bean id="gymService" class="com.kristina.spring.services.GymCoachService">
     </bean>
+    <bean id ="custObj" class="com.kristina.tekstac.constructor_injection.Customer">
+    </bean>
+    <bean id ="memberShipObj" class="com.kristina.tekstac.constructor_injection.MemberShip">
+        <constructor-arg ref="custObj"/>
+    </bean>
+
+<!--    Set up literal value setter injection !-->
+
+    <bean id="currencyConverter" class="com.kristina.tekstac.setter_injection.concurency_converter_collections.CurrencyConverter">
+        <property name="mObj">
+            <map>
+                <entry key="DOLLAR" value="65"/>
+                <entry key="EURO" value="80"/>
+                <entry key="DINAR" value="218"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--    Make the necessary changes in the XML Configuration file,so that every time a new customer object and a new address object needs to be created.
+ !-->
+
+
+    <bean id="addrObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Address"/>
+
+    <bean id="custObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Customer">
+        <property name="address" ref="addrObj"/>
+    </bean>
+
 </beans>
