@@ -16,6 +16,7 @@ public class Driver {
         Customer custObj2=(Customer)ctx.getBean("custObj");
         System.out.println("Default customer City of second Customer: "+custObj2.getAddress().getCity());
 
+
     }
 
 

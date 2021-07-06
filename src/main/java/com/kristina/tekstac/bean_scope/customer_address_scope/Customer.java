@@ -3,6 +3,9 @@ package com.kristina.tekstac.bean_scope.customer_address_scope;
 public class Customer {
 
     private int custId;
+    private String custName;
+    private Address address;
+
     public int getCustId() {
         return custId;
     }
@@ -21,7 +24,4 @@ public class Customer {
     public void setAddress(Address address) {
         this.address = address;
     }
-    private String custName;
-    private Address address;
-
 }

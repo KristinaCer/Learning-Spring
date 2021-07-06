@@ -14,15 +14,16 @@
     </bean>
     <bean id="gymService" class="com.kristina.spring.services.GymCoachService">
     </bean>
-    <bean id ="custObj" class="com.kristina.tekstac.constructor_injection.Customer">
+    <bean id="custObj" class="com.kristina.tekstac.constructor_injection.Customer">
     </bean>
-    <bean id ="memberShipObj" class="com.kristina.tekstac.constructor_injection.MemberShip">
+    <bean id="memberShipObj" class="com.kristina.tekstac.constructor_injection.MemberShip">
         <constructor-arg ref="custObj"/>
     </bean>
 
-<!--    Set up literal value setter injection !-->
+    <!--    Set up literal value setter injection !-->
 
-    <bean id="currencyConverter" class="com.kristina.tekstac.setter_injection.concurency_converter_collections.CurrencyConverter">
+    <bean id="currencyConverter"
+          class="com.kristina.tekstac.setter_injection.concurency_converter_collections.CurrencyConverter">
         <property name="mObj">
             <map>
                 <entry key="DOLLAR" value="65"/>
@@ -36,9 +37,9 @@
  !-->
 
 
-    <bean id="addrObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Address"/>
+    <bean id="addrObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Address" scope = "prototype"/>
 
-    <bean id="custObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Customer">
+    <bean id="custObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Customer" scope="prototype">
         <property name="address" ref="addrObj"/>
     </bean>
 

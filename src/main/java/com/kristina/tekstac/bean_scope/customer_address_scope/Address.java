@@ -3,6 +3,8 @@ package com.kristina.tekstac.bean_scope.customer_address_scope;
 public class Address {
     private String street;
     private String city;
+    private int pincode;
+
     public String getStreet() {
         return street;
     }
@@ -21,7 +23,4 @@ public class Address {
     public void setPincode(int pincode) {
         this.pincode = pincode;
     }
-    private int pincode;
-
-
 }
