@@ -37,10 +37,22 @@
  !-->
 
 
-    <bean id="addrObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Address" scope = "prototype"/>
+  <!--  <bean id="addrObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Address" scope = "prototype"/>
 
     <bean id="custObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Customer" scope="prototype">
         <property name="address" ref="addrObj"/>
+    </bean> -->
+
+    <!-- DBConfig class should be registered as a bean with the spring container via XML file -->
+
+    <bean id ="dbConfigObj" class="com.kristina.tekstac.setter_injection.db_config_setter_based_injection.DBConfig">
+        <property name="driverName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/employees_db"/>
+        <property name="userName" value="root"/>
+        <property name="password" value=""/>
     </bean>
 
+    <bean id="empDaoObj" class="com.kristina.tekstac.setter_injection.db_config_setter_based_injection.EmployeeDAO">
+        <property name ="dbConfig" ref="dbConfigObj" ></property>
+    </bean>
 </beans>
