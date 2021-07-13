@@ -7,10 +7,61 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--    Set up constructor injection-->
+
     <bean id="coach" class="com.kristina.spring.models.GymCoach">
-        <!--    Set up constructor injection-->
         <constructor-arg ref="gymService"/>
     </bean>
     <bean id="gymService" class="com.kristina.spring.services.GymCoachService">
     </bean>
+    <bean id="custObj" class="com.kristina.tekstac.constructor_injection.Customer">
+    </bean>
+    <bean id="memberShipObj" class="com.kristina.tekstac.constructor_injection.MemberShip">
+        <constructor-arg ref="custObj"/>
+    </bean>
+
+    <!--    Set up literal value setter injection !-->
+
+    <bean id="currencyConverter"
+          class="com.kristina.tekstac.setter_injection.concurency_converter_collections.CurrencyConverter">
+        <property name="mObj">
+            <map>
+                <entry key="DOLLAR" value="65"/>
+                <entry key="EURO" value="80"/>
+                <entry key="DINAR" value="218"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--    Make the necessary changes in the XML Configuration file,so that every time a new customer object and a new address object needs to be created.
+ !-->
+
+
+  <!--  <bean id="addrObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Address" scope = "prototype"/>
+
+    <bean id="custObj" class="com.kristina.tekstac.bean_scope.customer_address_scope.Customer" scope="prototype">
+        <property name="address" ref="addrObj"/>
+    </bean> -->
+
+    <!-- DBConfig class should be registered as a bean with the spring container via XML file -->
+
+    <bean id ="dbConfigObj" class="com.kristina.tekstac.setter_injection.db_config_setter_based_injection.DBConfig">
+        <property name="driverName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/employees_db"/>
+        <property name="userName" value="root"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <bean id="empDaoObj" class="com.kristina.tekstac.setter_injection.db_config_setter_based_injection.EmployeeDAO">
+        <property name ="dbConfig" ref="dbConfigObj" ></property>
+    </bean>
+
+    <!-- An example of creating an inner bean via constructor injection -->
+    <bean id = "addressBook" class="com.kristina.tekstac.bean_scope.customer_address_scope.inner_bean.AddressBook">
+        <constructor-arg>
+        <bean id = "address" class="com.kristina.tekstac.bean_scope.customer_address_scope.inner_bean.Address">
+        </bean>
+        </constructor-arg>
+    </bean>
+
 </beans>
