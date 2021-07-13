@@ -71,9 +71,9 @@
     </bean>
 
     <!-- An example of creating an inner bean via constructor injection -->
-    <bean id = "addressBook" class="com.kristina.tekstac.bean_scope.customer_address_scope.inner_bean.AddressBook">
+    <bean id = "addressBook" class="com.kristina.tekstac.bean_scope.inner_bean.AddressBook">
         <constructor-arg>
-        <bean id = "address" class="com.kristina.tekstac.bean_scope.customer_address_scope.inner_bean.Address">
+        <bean id = "address" class="com.kristina.tekstac.bean_scope.inner_bean.Address">
         </bean>
         </constructor-arg>
     </bean>

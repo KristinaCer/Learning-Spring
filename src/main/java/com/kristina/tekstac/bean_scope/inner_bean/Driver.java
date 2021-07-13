@@ -1,4 +1,4 @@
-package com.kristina.tekstac.bean_scope.customer_address_scope.inner_bean;
+package com.kristina.tekstac.bean_scope.inner_bean;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
