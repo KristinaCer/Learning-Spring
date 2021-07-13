@@ -1,7 +1,6 @@
 package com.kristina.spring.services;
 
 import org.springframework.stereotype.Component;
-@Component
 public class SportsMotivationService implements CoachService {
 
     public SportsMotivationService(){
