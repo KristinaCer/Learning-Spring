@@ -10,11 +10,11 @@
 
 <context:property-placeholder location="application.properties"/>
 
-    <bean id="gymCoach" class="com.kristina.spring.models.GymCoach">
+    <bean id="gymCoach" class="com.kristina.spring_core_basic_examples.models.GymCoach">
         <!--    Set up constructor injection-->
         <constructor-arg ref="motivationService"/>
     </bean>
-    <bean id="footballCoach" class="com.kristina.spring.models.FootballCoach">
+    <bean id="footballCoach" class="com.kristina.spring_core_basic_examples.models.FootballCoach">
         <!--    Set up setter injection   -->
         <property name="motivationService" ref="motivationService"/>
 <!--        inject literal values-->
@@ -22,10 +22,10 @@
         <property name="teamName" value="${couch.team}"/>
     <!--    Set up constructor injection-->
 
-    <bean id="coach" class="com.kristina.spring.models.GymCoach">
+    <bean id="coach" class="com.kristina.spring_core_basic_examples.models.GymCoach">
         <constructor-arg ref="gymService"/>
     </bean>
-    <bean id="motivationService" class="com.kristina.spring.services.SportsMotivationService">
+    <bean id="motivationService" class="com.kristina.spring_core_basic_examples.services.SportsMotivationService">
     </bean>
 
     <bean id="custObj" class="com.kristina.tekstac.constructor_injection.Customer">

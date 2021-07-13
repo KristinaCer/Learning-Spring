@@ -1,8 +1,8 @@
-package com.kristina.spring;
+package com.kristina.spring_core_basic_examples;
 
-import com.kristina.spring.models.Coach;
-import com.kristina.spring.models.FootballCoach;
-import com.kristina.spring.models.GymCoach;
+import com.kristina.spring_core_basic_examples.models.Coach;
+import com.kristina.spring_core_basic_examples.models.FootballCoach;
+import com.kristina.spring_core_basic_examples.models.GymCoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {

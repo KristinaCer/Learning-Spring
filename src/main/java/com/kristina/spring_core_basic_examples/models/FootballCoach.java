@@ -1,6 +1,6 @@
-package com.kristina.spring.models;
+package com.kristina.spring_core_basic_examples.models;
 
-import com.kristina.spring.services.SportsMotivationService;
+import com.kristina.spring_core_basic_examples.services.SportsMotivationService;
 
 public class FootballCoach implements Coach{
     private SportsMotivationService motivationService;
