@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <bean id = "engine" class ="com.cts.engineAnalysis.Engine" abstract="true"></bean>
+    <bean id = "petrolEngine" class="com.cts.engineAnalysis.PetrolEngine">
+        <property name="torque" value="300"/>
+        <property name="rpm" value="4000"/>
+        <property name="fuel" value="petrol"/>
+    </bean>
+    <bean id = "dieselEngine" class="com.cts.engineAnalysis.DieselEngine">
+        <property name="torque" value="500"/>
+        <property name="rpm" value="3000"/>
+        <property name="fuel" value="diesel"/>
+    </bean>
+    <bean id = "petrolCar" class="com.cts.engineAnalysis.Car">
+        <constructor-arg ref="petrolEngine"></constructor-arg>
+        <constructor-arg value ="Honda"></constructor-arg>
+</bean>
+    <bean id ="dieselCar" class="com.cts.engineAnalysis.Car">
+        <constructor-arg ref="dieselEngine"></constructor-arg>
+        <constructor-arg value="Suzuki"></constructor-arg>
+    </bean>
+</beans>
