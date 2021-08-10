@@ -1,8 +1,8 @@
 ## Constructor Injection
 Create a class called Customer that has the below attributes <br />
-![Attributes1](resources/readme/attributes1.JPG) <br />
+![Attributes1](resources/readme/Capture1.JPG) <br />
 Create another class  MemberShip that has the below attributes <br />
-![Attributes2](resources/readme/attributes2.JPG) <br />
+![Attributes2](resources/readme/Capture2.JPG) <br />
 
 
 Attributes should be private.
