@@ -14,7 +14,6 @@ public class CurrencyConverter {
     }
 
     public int getTotalCurrencyValue(String value) {
-        int amount = Integer.parseInt(value);
         for (Map.Entry<String, String> entry : mObj.entrySet()) {
             String currencyName = entry.getKey();
             String uppercaseValue = value.toUpperCase();

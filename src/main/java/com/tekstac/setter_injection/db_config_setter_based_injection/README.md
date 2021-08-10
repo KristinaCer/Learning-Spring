@@ -1,19 +1,36 @@
 ## DBConfig-SetterBasedInjection
-Create a class called DBconfig  with the below attributes <br />
-![Readme1](resources/readme1.JPG) <br />
+Create a class called DBconfig  with the below attributes: <br />
+
+driverName- String
+
+url - String
+
+userName - String
+
+password - String
 
 Include getters and setters for all the above mentioned attributes.
 
-DBConfig class should be registered as a bean with the spring container via XML file
+DBConfig class should be registered as a bean with the spring container via XML file.
 
-The  attributes inside the DBConfig should be configured in the xml with the below values
+The  attributes inside the DBConfig should be configured in the xml with the below values:
 <br />
-![Readme2](resources/readme2.JPG) <br />
+
+driverName - oracle.jdbc.driver.OracleDriver
+
+url - jdbc:oracle:thin:@localhost:1521:oracle
+
+userName - john
+
+password - john@123
+
 The values for these attributes should be injected via setter based injection.
 
-Create class called EmployeeDAO that has below attribute
+Create class called EmployeeDAO that has below attribute:
 <br />
-![Readme3](resources/readme3.JPG) <br />
+
+dbConfig - DBConfig
+
 Include getter/setter for the above attribute
 
 EmployeeDAO should be registered as a bean with the spring container via XML file and DBConfig should be injected using setter based injection into the EmployeeDAO class

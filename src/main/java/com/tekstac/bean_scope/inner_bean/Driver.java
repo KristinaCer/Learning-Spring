@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Driver {
     public static AddressBook loadAddressBook()
     {
-        ApplicationContext ctx=new ClassPathXmlApplicationContext("spring-config-tekstac-hands-ons.xml");
+        ApplicationContext ctx=new ClassPathXmlApplicationContext("inner-bean.xml");
         AddressBook book = ctx.getBean("addressBook", AddressBook.class);
         return book;
     }

@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config-tekstac-hands-ons.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("db-config-setter-based-injection.xml");
         EmployeeDAO employeeDAO = context.getBean("empDaoObj", EmployeeDAO.class);
         employeeDAO.getDbConfig();
     }
