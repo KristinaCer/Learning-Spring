@@ -31,7 +31,6 @@ public abstract class Engine {
 		this.fuel = fuel;
 	}
 
-
 	public abstract int getPerformance();
 
 }
