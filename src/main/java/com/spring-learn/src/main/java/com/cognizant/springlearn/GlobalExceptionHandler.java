@@ -10,7 +10,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.*;
-
+@ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
@@ -23,11 +23,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         List<String> errors = new ArrayList<>();
         if (ex.getCause() instanceof InvalidFormatException) {
             final Throwable cause = ex.getCause() == null ? ex : ex.getCause();
-            for (JsonMappingException.Reference reference : ((InvalidFormatException) cause).getPath()) {
+            for (InvalidFormatException.Reference reference : ((InvalidFormatException) cause).getPath()) {
                 body.put("message", "Incorrect format for field '" + reference.getFieldName() + "'");
             }
         }
-
         return new ResponseEntity<>(body, headers, status);
     }
 }
