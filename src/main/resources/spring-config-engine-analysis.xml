@@ -5,22 +5,22 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/jdbc">
 
-    <bean id="engine" class="com.cts.engineAnalysis.Engine" abstract="true"></bean>
-    <bean id="petrolEngine" class="com.cts.engineAnalysis.PetrolEngine">
+    <bean id="engine" class="com.xml_config.engine_analysis.Engine" abstract="true"></bean>
+    <bean id="petrolEngine" class="com.xml_config.engine_analysis.PetrolEngine">
         <property name="torque" value="300"/>
         <property name="rpm" value="4000"/>
         <property name="fuel" value="petrol"/>
     </bean>
-    <bean id="dieselEngine" class="com.cts.engineAnalysis.DieselEngine">
+    <bean id="dieselEngine" class="com.xml_config.engine_analysis.DieselEngine">
         <property name="torque" value="500"/>
         <property name="rpm" value="3000"/>
         <property name="fuel" value="diesel"/>
     </bean>
-    <bean id="petrolCar" class="com.cts.engineAnalysis.Car">
+    <bean id="petrolCar" class="com.xml_config.engine_analysis.Car">
         <constructor-arg ref="petrolEngine"></constructor-arg>
         <constructor-arg value="Honda"></constructor-arg>
     </bean>
-    <bean id="dieselCar" class="com.cts.engineAnalysis.Car">
+    <bean id="dieselCar" class="com.xml_config.engine_analysis.Car">
         <constructor-arg ref="dieselEngine"></constructor-arg>
         <constructor-arg value="Suzuki"></constructor-arg>
     </bean>

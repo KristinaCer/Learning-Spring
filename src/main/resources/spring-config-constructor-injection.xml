@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/jdbc">
-    <bean id="custObj" class="com.tekstac.constructor_injection.Customer">
+    <bean id="custObj" class="com.xml_config.constructor_injection.Customer">
     </bean>
-    <bean id="memberShipObj" class="com.tekstac.constructor_injection.MemberShip">
+    <bean id="memberShipObj" class="com.xml_config.constructor_injection.MemberShip">
         <constructor-arg ref="custObj"/>
     </bean>
 </beans>

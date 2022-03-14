@@ -5,9 +5,9 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/jdbc">
     <!-- An example of creating an inner bean via constructor injection -->
-    <bean id="addressBook" class="com.tekstac.bean_scope.inner_bean.AddressBook">
+    <bean id="addressBook" class="com.xml_config.inner_bean.AddressBook">
         <constructor-arg>
-            <bean id="address" class="com.tekstac.bean_scope.inner_bean.Address">
+            <bean id="address" class="com.xml_config.inner_bean.Address">
             </bean>
         </constructor-arg>
     </bean>

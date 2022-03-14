@@ -2,10 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="booking" class="com.ezee_transport.model.Booking"></bean>
-    <bean id="transportService" class="com.ezee_transport.service.TransportService">
+    <bean id="booking" class="com.xml_config.ezee_transport.model.Booking"></bean>
+    <bean id="transportService" class="com.xml_config.ezee_transport.service.TransportService">
         <property name="vehicle">
-            <bean id="vehicle" class="com.ezee_transport.model.Vehicle">
+            <bean id="vehicle" class="com.xml_config.ezee_transport.model.Vehicle">
                 <constructor-arg value="Chennai"></constructor-arg>
                 <property name="destinationMap">
                     <map>
